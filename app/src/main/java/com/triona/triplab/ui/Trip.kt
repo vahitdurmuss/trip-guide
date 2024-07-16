@@ -1,28 +1,29 @@
 package com.triona.triplab.ui
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -31,23 +32,24 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.triona.triplab.R
+import com.triona.triplab.data.IstanbulDummyTrip
+import com.triona.triplab.data.RizeDummyTrip
 import com.triona.triplab.data.Trip
 import com.triona.triplab.data.TripStep
 
 @Composable
-fun TripStep(whichStep: Int, title: String, description: String, modifier: Modifier = Modifier) {
-
-    Column {
+fun TripStep(tripStep: TripStep, modifier: Modifier = Modifier) {
+    Column(modifier=modifier) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
-                text = title,
+                text = tripStep.title,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = modifier.weight(1f),
                 textAlign = TextAlign.Start
             )
             Text(
-                text = "10:00-12:00",
+                text = "${tripStep.startHour}-${tripStep.endHour}",
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Light,
                 modifier = modifier.weight(1f),
@@ -61,7 +63,7 @@ fun TripStep(whichStep: Int, title: String, description: String, modifier: Modif
                 modifier = modifier.size(80.dp)
             )
             Text(
-                text = description,
+                text = tripStep.quickDescription,
                 modifier = modifier
                     .paddingFromBaseline(top = 8.dp)
                     .padding(8.dp)
@@ -69,11 +71,13 @@ fun TripStep(whichStep: Int, title: String, description: String, modifier: Modif
             )
         }
     }
+
 }
 
 
+
 @Composable
-fun TripStory(tripSteps: List<TripStep>, modifier: Modifier = Modifier) {
+fun TripStepsInList(tripSteps: List<TripStep>, modifier: Modifier = Modifier) {
 
     LazyColumn(
         contentPadding = PaddingValues(8.dp),
@@ -82,13 +86,23 @@ fun TripStory(tripSteps: List<TripStep>, modifier: Modifier = Modifier) {
     ) {
         items(tripSteps) { tripStep ->
             com.triona.triplab.ui.TripStep(
-                tripStep.whichStep,
-                tripStep.title,
-                tripStep.quickDescription
+                tripStep
             )
         }
     }
 
+}
+
+@Composable
+fun TripStepsInGrid(steps: List<TripStep>, modifier: Modifier = Modifier) {
+
+    Surface {
+        LazyHorizontalGrid(rows = GridCells.Fixed(2)) {
+            items(steps){step->
+                com.triona.triplab.ui.TripStep(step)
+            }
+        }
+    }
 }
 
 @Composable
@@ -120,6 +134,7 @@ fun Trips(trips: List<Trip>, onClickTrip: (Trip) -> Unit, modifier: Modifier = M
     }
 }
 
+
 @Preview
 @Composable
 fun PreviewTripItem(modifier: Modifier = Modifier) {
@@ -128,22 +143,21 @@ fun PreviewTripItem(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-fun PreviewTripStory() {
-    val tripSteps = List(10) {
-        TripStep(
-            it,
-            "Kahvaltı",
-            "Elif Gözlemede taze ve lezzetli bir kahvaltıyla güne başlayabilirsiniz."
-        )
-    }
-    TripStory(tripSteps = tripSteps, modifier = Modifier)
+fun PreviewTripStepsInList() {
+    TripStepsInList(tripSteps = RizeDummyTrip.rizeTripSteps, modifier = Modifier)
+}
+
+@Preview
+@Composable
+fun PreviewTripStepsInGrid() {
+    TripStepsInGrid(steps = RizeDummyTrip.rizeTripSteps, modifier = Modifier)
 }
 
 @Preview
 @Composable
 fun PreviewTrips() {
     val trips = List(10) {
-        Trip(it, "Akyaka Turu", "32,39", listOf())
+        IstanbulDummyTrip.istanbulTrip
     }
     val onClickTrip: (Trip) -> Unit = {}
     Trips(trips =trips , onClickTrip = onClickTrip)
@@ -154,9 +168,7 @@ fun PreviewTrips() {
 @Composable
 fun PreviewTripStep() {
     TripStep(
-        1,
-        "Kahvaltı",
-        "Elif Gözlemede taze ve lezzetli bir kahvaltıyla güne başlayabilirsiniz.",
+        RizeDummyTrip.rizeTripSteps[0],
         modifier = Modifier
     )
 }

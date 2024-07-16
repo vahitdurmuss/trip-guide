@@ -12,6 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.triona.triplab.data.Guider
+import com.triona.triplab.data.IstanbulDummyTrip
+import com.triona.triplab.data.RizeDummyTrip
 import com.triona.triplab.data.Trip
 import com.triona.triplab.data.categories
 import com.triona.triplab.data.listGuiders
@@ -19,7 +21,6 @@ import com.triona.triplab.data.onClickCategory
 import com.triona.triplab.data.onClickGuider
 import com.triona.triplab.data.onClickTrip
 import com.triona.triplab.data.regions
-import com.triona.triplab.data.trips
 import com.triona.triplab.ui.Categories
 import com.triona.triplab.ui.Guiders
 import com.triona.triplab.ui.Trips
@@ -41,7 +42,7 @@ fun HomeScreen(modifier: Modifier) {
         }
 
         TheBestSlot("The Best Trips") {
-            Trips(trips = trips, onClickTrip = onClickTrip)
+            Trips(trips = List(10){IstanbulDummyTrip.istanbulTrip}, onClickTrip = onClickTrip)
         }
     }
     
@@ -67,7 +68,7 @@ fun TheBestSlot(header:String,modifier: Modifier = Modifier, content: @Composabl
 @Composable
 fun PreviewBestSlot(modifier: Modifier = Modifier) {
     TheBestSlot("The Best Trips") {
-        Trips(trips = trips, onClickTrip = onClickTrip)
+        Trips(trips = List(10){RizeDummyTrip.rizeTrip}, onClickTrip = onClickTrip)
     }
 }
 
