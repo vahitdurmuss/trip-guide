@@ -1,5 +1,6 @@
 package com.triona.triplab.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -13,6 +14,8 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CardElevation
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -26,14 +29,21 @@ import androidx.compose.ui.unit.dp
 val categories= listOf("SeaSide","Beach","Mountain")
 
 @Composable
-fun CategoryItem(category:String,onClick: () -> Unit, modifier: Modifier = Modifier) {
+fun CategoryItem(category: String, onClick: (String) -> Unit, modifier: Modifier = Modifier) {
 
-    Card(modifier = modifier
-        .size(80.dp)
-        .clip(RoundedCornerShape(1.dp))
-        .clickable { onClick() }) {
+    Card(
+        modifier = modifier
+            .size(80.dp)
+            .clip(RoundedCornerShape(1.dp))
+            .clickable { onClick(category) },
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+    ) {
 
-        Box(contentAlignment = Alignment.Center, modifier = modifier.fillMaxWidth().fillMaxHeight()) {
+        Box(
+            contentAlignment = Alignment.Center, modifier = modifier
+                .fillMaxWidth()
+                .fillMaxHeight()
+        ) {
             Text(text = category, textAlign = TextAlign.Center)
         }
 
@@ -44,7 +54,7 @@ fun CategoryItem(category:String,onClick: () -> Unit, modifier: Modifier = Modif
 fun Categories(list:List<String>,onClick: (String) -> Unit,modifier: Modifier = Modifier) {
     LazyRow(contentPadding = PaddingValues(8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         items(list){
-            CategoryItem(it,onClick = { onClick(it) },modifier)
+            CategoryItem(it,onClick =onClick ,modifier)
         }
     }
 }

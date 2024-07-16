@@ -37,7 +37,7 @@ import com.triona.triplab.data.TripStep
 import com.triona.triplab.ui.theme.TripLabTheme
 
 @Composable
-fun TripStory(trip: Trip, modifier: Modifier = Modifier) {
+fun TripStory(trip: Trip,onClickRoadMap:(Trip)->Unit,onClickTripStep:(TripStep)->Unit, modifier: Modifier = Modifier) {
 
     Column(modifier = modifier.padding(8.dp)) {
 
@@ -53,14 +53,14 @@ fun TripStory(trip: Trip, modifier: Modifier = Modifier) {
             modifier = modifier
                 .fillMaxWidth()
                 .heightIn(300.dp),
-            contentScale = ContentScale.FillBounds
+            contentScale = ContentScale.FillWidth
         )
 
 
         Row(
             verticalAlignment = Alignment.CenterVertically, modifier = modifier.align(Alignment.End)
         ) {
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(onClick = { onClickRoadMap(trip) }) {
                 Icon(imageVector = Icons.Default.LocationOn, contentDescription = "location")
             }
             Text(text = trip.location)
@@ -71,7 +71,7 @@ fun TripStory(trip: Trip, modifier: Modifier = Modifier) {
 
         Text(text = trip.description, modifier = modifier.padding(8.dp))
 
-        TripStepsInList(tripSteps = trip.steps, modifier = modifier.fillMaxHeight())
+        TripStepsInList(tripSteps = trip.steps,onClickTripStep ,modifier = modifier.fillMaxHeight())
 
     }
 
@@ -82,6 +82,8 @@ fun TripStory(trip: Trip, modifier: Modifier = Modifier) {
 @Composable
 fun PreviewTripStory(modifier: Modifier = Modifier) {
     TripLabTheme {
-        TripStory(MuglaDummyTrip.muglaTrip)
+        val onClickTripStep: (TripStep)->Unit ={}
+        val onClickRoadMap:(Trip)->Unit={}
+        TripStory(MuglaDummyTrip.muglaTrip,onClickRoadMap,onClickTripStep)
     }
 }
