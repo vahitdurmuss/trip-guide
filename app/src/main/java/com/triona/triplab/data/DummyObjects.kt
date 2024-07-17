@@ -34,3 +34,4 @@ val cities = listOf(
 val onClickTrip: (Trip) -> Unit = {}
 val onClickCategory: (String) -> Unit = {}
 val onClickGuider: (Guider) -> Unit = {}
+val onCitySelect:(List<String>) -> Unit ={}

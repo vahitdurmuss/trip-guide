@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
@@ -14,6 +15,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -34,7 +37,6 @@ fun GuiderItem(fullName: String, onClick: () -> Unit, modifier: Modifier = Modif
 
     Column(horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
-            .border(1.dp, Color.LightGray, RectangleShape)
             .width(60.dp)
             .height(100.dp)
             .clickable { onClick() }) {
@@ -67,7 +69,13 @@ fun Guiders(guiders: List<Guider>,onClickGuider: (Guider) -> Unit, modifier: Mod
 
     LazyRow( horizontalArrangement = Arrangement.spacedBy(8.dp), contentPadding = PaddingValues(8.dp), modifier = modifier) {
         items(guiders){ guider->
-            GuiderItem(fullName ="$guider.name + $guider.surname" , onClick = { onClickGuider(guider) },modifier)
+            Surface(shadowElevation = 2.dp, shape = MaterialTheme.shapes.small) {
+                GuiderItem(
+                    fullName = "$guider.name + $guider.surname",
+                    onClick = { onClickGuider(guider) },
+                    modifier
+                )
+            }
         }
     }
 }

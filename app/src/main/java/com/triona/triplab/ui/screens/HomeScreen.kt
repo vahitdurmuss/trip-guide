@@ -3,6 +3,7 @@ package com.triona.triplab.ui.screens
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,11 +13,13 @@ import com.triona.triplab.data.IstanbulDummyTrip
 import com.triona.triplab.data.RizeDummyTrip
 import com.triona.triplab.data.categories
 import com.triona.triplab.data.listGuiders
+import com.triona.triplab.data.onCitySelect
 import com.triona.triplab.data.onClickCategory
 import com.triona.triplab.data.onClickGuider
 import com.triona.triplab.data.onClickTrip
 import com.triona.triplab.data.regions
 import com.triona.triplab.ui.Categories
+import com.triona.triplab.ui.FilterChipsInLazyRow
 import com.triona.triplab.ui.Guiders
 import com.triona.triplab.ui.TripsInGrid
 import com.triona.triplab.ui.TripsInLazyRow
@@ -25,24 +28,13 @@ import com.triona.triplab.ui.TripsInLazyRow
 fun HomeScreen(modifier: Modifier) {
     
     Column(modifier=modifier.fillMaxHeight()) {
-        TheBestSlot("Trip Types") {
-            Categories(list = categories, onClick = onClickCategory )
-        }
-
-        TheBestSlot("Regions") {
-            Categories(list = regions, onClick = onClickCategory )
-        }
-
-        TheBestSlot("Guiders") {
-            Guiders(guiders = listGuiders , onClickGuider = onClickGuider )
-        }
-
-        TheBestSlot("Şehirler Chips") {
-            Guiders(guiders = listGuiders , onClickGuider = onClickGuider )
-        }
-
+        FilterChipsInLazyRow(title = "Trip Types", list = categories, onCitySelected = onCitySelect)
 
         TripsInGrid("The Best Trips",trips = List(10){IstanbulDummyTrip.istanbulTrip}, onClickTrip = onClickTrip)
+
+        TheBestSlot(header = "The Best Writers") {
+            Guiders(guiders = listGuiders, onClickGuider = onClickGuider )
+        }
 
     }
     
@@ -56,11 +48,9 @@ fun PreviewHomeScreen(modifier: Modifier = Modifier) {
 
 @Composable
 fun TheBestSlot(header:String,modifier: Modifier = Modifier, content: @Composable (Modifier) -> Unit) {
-
     Column {
-        Text(text =header,modifier=modifier.padding(8.dp,2.dp,2.dp,2.dp))
+        Text(text =header,modifier=modifier.padding(8.dp,2.dp,2.dp,2.dp), style = MaterialTheme.typography.headlineSmall)
         content(modifier)
     }
-
 }
 
