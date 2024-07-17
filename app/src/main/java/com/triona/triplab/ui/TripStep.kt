@@ -16,6 +16,7 @@ import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -35,7 +36,10 @@ import com.triona.triplab.data.TripStep
 
 @Composable
 fun TripStep(tripStep: TripStep, onClickTrip: (TripStep) -> Unit, modifier: Modifier = Modifier) {
-    Column(modifier = modifier.clickable { onClickTrip(tripStep) }.clip(shape = RoundedCornerShape(4.dp)).padding(4.dp)) {
+    Column(modifier = modifier
+        .clickable { onClickTrip(tripStep) }
+        .clip(shape = RoundedCornerShape(4.dp))
+        .padding(4.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
                 text = tripStep.title,
@@ -48,7 +52,6 @@ fun TripStep(tripStep: TripStep, onClickTrip: (TripStep) -> Unit, modifier: Modi
                 text = "${tripStep.startHour}-${tripStep.endHour}",
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Light,
-                modifier = modifier.weight(1f),
                 textAlign = TextAlign.End
             )
         }
@@ -56,7 +59,9 @@ fun TripStep(tripStep: TripStep, onClickTrip: (TripStep) -> Unit, modifier: Modi
             Image(
                 painter = painterResource(id = R.mipmap.img_woman_traveler),
                 contentDescription = "Item Photo",
-                modifier = modifier.size(80.dp).clip(RoundedCornerShape(4.dp)),
+                modifier = modifier
+                    .size(80.dp)
+                    .clip(RoundedCornerShape(4.dp)),
                 contentScale = ContentScale.None
             )
             Text(
@@ -80,10 +85,12 @@ fun TripStepsInList(tripSteps: List<TripStep>,onClickTripStep: (TripStep) -> Uni
         modifier = modifier
     ) {
         items(tripSteps) { tripStep ->
-            com.triona.triplab.ui.TripStep(
-                tripStep,
-                onClickTripStep
-            )
+            Surface(tonalElevation = 2.dp, modifier = modifier.clip(MaterialTheme.shapes.small)) {
+                com.triona.triplab.ui.TripStep(
+                    tripStep,
+                    onClickTripStep
+                )
+            }
         }
     }
 
