@@ -108,6 +108,7 @@ object RizeDummyTrip {
     val rizeTrip = Trip(
         id = 1,
         title = "Rize Keşfi",
+        likeCount = 300,
         description = "Rize'nin doğal güzelliklerini ve kültürel zenginliklerini keşfedin.",
         location = "Rize, Türkiye",
         steps = rizeTripSteps

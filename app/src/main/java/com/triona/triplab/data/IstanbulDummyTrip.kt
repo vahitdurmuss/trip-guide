@@ -77,6 +77,7 @@ object IstanbulDummyTrip {
     val istanbulTrip = Trip(
         id = 1,
         title = "İstanbul Keşfi",
+        likeCount = 100,
         description = "İstanbul'un tarihini ve güzelliklerini keşfetmek için mükemmel bir plan",
         location = "İstanbul, Türkiye",
         steps = istanbulTripSteps

@@ -59,6 +59,7 @@ object MuglaDummyTrip {
         id = 1,
         title = "Muğla Serüveni",
         description = "Muğla'nın doğal güzelliklerini ve tarihi yerlerini keşfedin.",
+        likeCount = 200,
         location = "Muğla, Türkiye",
         steps = muglaTripSteps
     )

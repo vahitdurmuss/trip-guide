@@ -38,7 +38,6 @@ import com.triona.triplab.data.TripStep
 fun TripStep(tripStep: TripStep, onClickTrip: (TripStep) -> Unit, modifier: Modifier = Modifier) {
     Column(modifier = modifier
         .clickable { onClickTrip(tripStep) }
-        .clip(shape = RoundedCornerShape(4.dp))
         .padding(4.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
@@ -96,29 +95,11 @@ fun TripStepsInList(tripSteps: List<TripStep>,onClickTripStep: (TripStep) -> Uni
 
 }
 
-@Composable
-fun TripStepsInGrid(steps: List<TripStep>,onClickTrip:(TripStep)->Unit, modifier: Modifier = Modifier) {
-    Surface {
-        LazyHorizontalGrid(rows = GridCells.Fixed(2)) {
-            items(steps){step->
-                com.triona.triplab.ui.TripStep(step, onClickTrip =onClickTrip)
-            }
-        }
-    }
-}
-
 @Preview
 @Composable
 fun PreviewTripStepsInList() {
     TripStepsInList(tripSteps = RizeDummyTrip.rizeTripSteps,{}, modifier = Modifier)
 }
-
-@Preview
-@Composable
-fun PreviewTripStepsInGrid() {
-    TripStepsInGrid(steps = RizeDummyTrip.rizeTripSteps,{}, modifier = Modifier)
-}
-
 
 @Preview
 @Composable
