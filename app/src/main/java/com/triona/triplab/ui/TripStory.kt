@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -23,6 +24,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
@@ -49,11 +51,11 @@ fun TripStory(trip: Trip,onClickRoadMap:(Trip)->Unit,onClickTripStep:(TripStep)-
         )
 
         Image(
-            painter = painterResource(id = R.mipmap.img_woman_traveler),
+            painter = painterResource(id = R.mipmap.ic_mugla_seruven_foreground),
             contentDescription = "",
             modifier = modifier
                 .fillMaxWidth()
-                .heightIn(300.dp),
+                .height(200.dp).clip(MaterialTheme.shapes.extraSmall),
             contentScale = ContentScale.FillWidth
         )
 
