@@ -42,10 +42,9 @@ fun TripStep(tripStep: TripStep, onClickTrip: (TripStep) -> Unit, modifier: Modi
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
                 text = tripStep.title,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Bold,
                 modifier = modifier.weight(1f),
-                textAlign = TextAlign.Start
+                textAlign = TextAlign.Start,
+                style = MaterialTheme.typography.titleMedium
             )
             Text(
                 text = "${tripStep.startHour}-${tripStep.endHour}",
@@ -64,6 +63,7 @@ fun TripStep(tripStep: TripStep, onClickTrip: (TripStep) -> Unit, modifier: Modi
                 contentScale = ContentScale.None
             )
             Text(
+                style = MaterialTheme.typography.bodyMedium,
                 text = tripStep.quickDescription,
                 modifier = modifier
                     .paddingFromBaseline(top = 8.dp)

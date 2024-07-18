@@ -2,8 +2,6 @@ package com.triona.triplab.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,7 +14,6 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -70,7 +67,7 @@ fun FilterChipsInLazyRow(
     Column {
         Text(
             text = title,
-            style = MaterialTheme.typography.headlineSmall,
+            style = MaterialTheme.typography.titleMedium,
             modifier = modifier.padding(8.dp)
         )
 
@@ -97,8 +94,9 @@ fun FilterChipsInLazyRow(
 }
 
 @Composable
-fun CityFilterChipsInGrid(
-    cities: List<String>,
+fun FilterChipsInGrid(
+    title: String,
+    list: List<String>,
     onCitySelected: (List<String>) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -110,7 +108,7 @@ fun CityFilterChipsInGrid(
             .fillMaxWidth()
     ) {
         Text(
-            text = "Select Cities",
+            text = title,
             style = MaterialTheme.typography.titleMedium,
             modifier = modifier.padding(8.dp)
         )
@@ -140,5 +138,9 @@ fun CityFilterChipsInGrid(
 @Preview
 @Composable
 fun PreviewCityFilterChips(modifier: Modifier = Modifier) {
-    FilterChipsInLazyRow(title = "Trip Types", list = regions, onCitySelected = onCitySelect)
+
+    Column {
+        FilterChipsInLazyRow(title = "Trip Types", list = regions, onCitySelected = onCitySelect)
+        FilterChipsInGrid(title = "Select City", list = cities, onCitySelected = onCitySelect)
+    }
 }

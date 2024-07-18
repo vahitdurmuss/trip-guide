@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -31,6 +32,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.triona.triplab.R
 import com.triona.triplab.data.Guider
+import com.triona.triplab.data.listGuiders
+import com.triona.triplab.data.onClickGuider
 
 @Composable
 fun GuiderItem(fullName: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
@@ -55,9 +58,10 @@ fun GuiderItem(fullName: String, onClick: () -> Unit, modifier: Modifier = Modif
         Text(
             text = fullName,
             modifier = Modifier
-                .paddingFromBaseline(top = 8.dp, bottom = 16.dp)
-                .height(30.dp),
-            textAlign = TextAlign.Center
+                .paddingFromBaseline(top = 8.dp, bottom = 4.dp),
+            textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.bodySmall,
+            maxLines = 2
         )
 
     }
@@ -65,16 +69,19 @@ fun GuiderItem(fullName: String, onClick: () -> Unit, modifier: Modifier = Modif
 }
 
 @Composable
-fun Guiders(guiders: List<Guider>,onClickGuider: (Guider) -> Unit, modifier: Modifier = Modifier) {
+fun Guiders(title:String,guiders: List<Guider>,onClickGuider: (Guider) -> Unit, modifier: Modifier = Modifier) {
 
-    LazyRow( horizontalArrangement = Arrangement.spacedBy(8.dp), contentPadding = PaddingValues(8.dp), modifier = modifier) {
-        items(guiders){ guider->
-            Surface(shadowElevation = 2.dp, shape = MaterialTheme.shapes.small) {
-                GuiderItem(
-                    fullName = "$guider.name + $guider.surname",
-                    onClick = { onClickGuider(guider) },
-                    modifier
-                )
+    Column {
+        Text(text = title,modifier=modifier.padding(8.dp), style = MaterialTheme.typography.titleMedium)
+        LazyRow( horizontalArrangement = Arrangement.spacedBy(8.dp), contentPadding = PaddingValues(8.dp), modifier = modifier) {
+            items(guiders){ guider->
+                Surface(shadowElevation = 2.dp, shape = MaterialTheme.shapes.small) {
+                    GuiderItem(
+                        fullName = "${guider.name} ${guider.surname}",
+                        onClick = { onClickGuider(guider) },
+                        modifier
+                    )
+                }
             }
         }
     }
@@ -90,7 +97,5 @@ fun PreviewGuider() {
 @Preview
 @Composable
 fun PreviewGuiders(modifier: Modifier = Modifier) {
-    val listGuiders= List(10){Guider(it,"Vahit","Durmuş")}
-    val onClickGuider: (Guider) -> Unit = {}
-    Guiders(guiders=listGuiders,onClickGuider=onClickGuider,modifier=Modifier)
+    Guiders("Guiders",guiders= listGuiders,onClickGuider=onClickGuider,modifier=Modifier)
 }

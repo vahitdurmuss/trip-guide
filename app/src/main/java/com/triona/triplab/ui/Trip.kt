@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
@@ -60,6 +59,7 @@ fun TripItem(trip: Trip, onClick: (Trip) -> Unit, modifier: Modifier = Modifier)
             )
 
             Text(
+                style = MaterialTheme.typography.titleMedium,
                 text = trip.title,
                 modifier = modifier
                     .width(100.dp)
@@ -140,7 +140,7 @@ fun TripsInLazyRow(trips: List<Trip>, onClickTrip: (Trip) -> Unit, modifier: Mod
 
 @Composable
 fun TripsInGrid(
-    header: String,
+    title: String,
     trips: List<Trip>,
     onClickTrip: (Trip) -> Unit,
     modifier: Modifier = Modifier
@@ -148,8 +148,8 @@ fun TripsInGrid(
 
     Column {
         Text(
-            text = header,
-            style = MaterialTheme.typography.headlineSmall,
+            text = title,
+            style = MaterialTheme.typography.titleMedium,
             modifier = modifier.padding(8.dp)
         )
 

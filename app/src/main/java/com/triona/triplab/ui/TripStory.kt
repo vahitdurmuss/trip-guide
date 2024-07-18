@@ -17,6 +17,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -42,8 +43,8 @@ fun TripStory(trip: Trip,onClickRoadMap:(Trip)->Unit,onClickTripStep:(TripStep)-
     Column(modifier = modifier.padding(8.dp)) {
 
         Text(
+            style = MaterialTheme.typography.headlineSmall,
             text = trip.title,
-            fontSize = 22.sp,
             modifier = modifier.align(Alignment.CenterHorizontally)
         )
 
@@ -63,13 +64,13 @@ fun TripStory(trip: Trip,onClickRoadMap:(Trip)->Unit,onClickTripStep:(TripStep)-
             IconButton(onClick = { onClickRoadMap(trip) }) {
                 Icon(imageVector = Icons.Default.LocationOn, contentDescription = "location")
             }
-            Text(text = trip.location)
+            Text(text = trip.location, style = MaterialTheme.typography.labelMedium)
         }
 
 
         Spacer(modifier = modifier.heightIn(10.dp))
 
-        Text(text = trip.description, modifier = modifier.padding(8.dp))
+        Text(text = trip.description, modifier = modifier.padding(8.dp), style = MaterialTheme.typography.bodyLarge)
 
         TripStepsInList(tripSteps = trip.steps,onClickTripStep ,modifier = modifier.fillMaxHeight())
 

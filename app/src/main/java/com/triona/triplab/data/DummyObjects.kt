@@ -1,6 +1,9 @@
 package com.triona.triplab.data
 
-val listGuiders = List(10) { Guider(it, "Vahit", "Durmuş") }
+val firstNames = listOf("Vahit", "Ahmet", "Mehmet", "Ayşe", "Fatma", "Emre", "Elif", "Hüseyin", "Yasemin", "Ali")
+val lastNames = listOf("Durmuş", "Yılmaz", "Kaya", "Demir", "Şahin", "Çelik", "Öztürk", "Aydın", "Aslan", "Arslan")
+
+val listGuiders = List(10) { Guider(it, firstNames[it], lastNames[it]) }
 
 val categories = listOf(
     "SeaSide", "Beach", "Mountain", "Historical", "Cultural", "Adventure",
