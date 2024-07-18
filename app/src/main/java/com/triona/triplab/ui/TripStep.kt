@@ -31,6 +31,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.triona.triplab.R
+import com.triona.triplab.data.MuglaDummyTrip
 import com.triona.triplab.data.RizeDummyTrip
 import com.triona.triplab.data.TripStep
 
@@ -55,7 +56,7 @@ fun TripStep(tripStep: TripStep, onClickTrip: (TripStep) -> Unit, modifier: Modi
         }
         Row {
             Image(
-                painter = painterResource(id = R.mipmap.img_woman_traveler),
+                painter = painterResource(id =tripStep.drawable),
                 contentDescription = "Item Photo",
                 modifier = modifier
                     .size(80.dp)
@@ -98,7 +99,7 @@ fun TripStepsInList(tripSteps: List<TripStep>,onClickTripStep: (TripStep) -> Uni
 @Preview
 @Composable
 fun PreviewTripStepsInList() {
-    TripStepsInList(tripSteps = RizeDummyTrip.rizeTripSteps,{}, modifier = Modifier)
+    TripStepsInList(tripSteps = MuglaDummyTrip.muglaTripSteps,{}, modifier = Modifier)
 }
 
 @Preview

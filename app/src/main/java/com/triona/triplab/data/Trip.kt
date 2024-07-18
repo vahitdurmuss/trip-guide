@@ -1,3 +1,6 @@
 package com.triona.triplab.data
 
-data class Trip(val id: Int,val likeCount:Int, val title: String,val description:String,val location: String, val steps: List<TripStep>)
+import androidx.annotation.DrawableRes
+import com.triona.triplab.R
+
+data class Trip(val id: Int, val likeCount:Int, val title: String, val description:String, val location: String, @DrawableRes val drawable:Int= R.mipmap.ic_mugla_seruven, val steps: List<TripStep>)

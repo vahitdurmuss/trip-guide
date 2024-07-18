@@ -51,7 +51,7 @@ fun TripStory(trip: Trip,onClickRoadMap:(Trip)->Unit,onClickTripStep:(TripStep)-
         )
 
         Image(
-            painter = painterResource(id = R.mipmap.ic_mugla_seruven_foreground),
+            painter = painterResource(id = trip.drawable),
             contentDescription = "",
             modifier = modifier
                 .fillMaxWidth()

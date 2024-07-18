@@ -49,7 +49,7 @@ fun TripItem(trip: Trip, onClick: (Trip) -> Unit, modifier: Modifier = Modifier)
             .clickable { onClick(trip) }
             .fillMaxWidth()) {
             Image(
-                painter = painterResource(id = R.mipmap.img_trip_item),
+                painter = painterResource(id = trip.drawable),
                 contentDescription = "trip showcase image",
                 modifier = modifier
                     .size(80.dp)

@@ -1,5 +1,7 @@
 package com.triona.triplab.data
 
+import com.triona.triplab.R
+
 object MuglaDummyTrip {
     val muglaTripSteps = listOf(
         TripStep(
@@ -10,7 +12,8 @@ object MuglaDummyTrip {
             endHour = 11,
             date = "2024-08-10",
             location = "36.5650, 29.1155",
-            photo = "oludeniz.jpg"
+            photo = "oludeniz.jpg",
+            drawable = R.mipmap.img_oludeniz
         ),
         TripStep(
             title = "Saklıkent Kanyonu Trekking",
@@ -20,7 +23,8 @@ object MuglaDummyTrip {
             endHour = 14,
             date = "2024-08-10",
             location = "36.5720, 29.3482",
-            photo = "saklikent.jpg"
+            photo = "saklikent.jpg",
+            drawable = R.mipmap.img_saklikent_kanyon
         ),
         TripStep(
             title = "Dalyan Tekne Turu",
@@ -30,7 +34,8 @@ object MuglaDummyTrip {
             endHour = 17,
             date = "2024-08-10",
             location = "36.8297, 28.6423",
-            photo = "dalyan.jpg"
+            photo = "dalyan.jpg",
+            drawable = R.mipmap.img_dalyan_tekneturu
         ),
         TripStep(
             title = "Bodrum'da Akşam Yemeği ve Gece Hayatı",
@@ -40,7 +45,8 @@ object MuglaDummyTrip {
             endHour = 22,
             date = "2024-08-10",
             location = "37.0359, 27.4305",
-            photo = "bodrum.jpg"
+            photo = "bodrum.jpg",
+            drawable = R.mipmap.img_bodrum_aksam_yemegi
         ),
         TripStep(
             title = "Konaklama",
@@ -50,13 +56,15 @@ object MuglaDummyTrip {
             endHour = 23,
             date = "2024-08-10",
             location = "37.1649, 28.2457",
-            photo = "konaklama.jpg"
+            photo = "konaklama.jpg",
+            drawable = R.mipmap.img_konaklama
         )
     )
 
     // Muğla için Trip nesnesini oluşturma
     val muglaTrip = Trip(
         id = 1,
+        drawable = R.mipmap.img_seruven_mugla,
         title = "Muğla Serüveni",
         description = "Muğla'nın doğal güzelliklerini ve tarihi yerlerini keşfedin.",
         likeCount = 200,
