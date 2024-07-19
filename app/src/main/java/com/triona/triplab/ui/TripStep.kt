@@ -84,7 +84,7 @@ fun TripStepsInList(tripSteps: List<TripStep>,onClickTripStep: (TripStep) -> Uni
     ) {
         items(tripSteps) { tripStep ->
             Surface(tonalElevation = 2.dp, modifier = modifier.clip(MaterialTheme.shapes.small)) {
-                com.triona.triplab.ui.TripStep(
+                TripStep(
                     tripStep,
                     onClickTripStep
                 )
