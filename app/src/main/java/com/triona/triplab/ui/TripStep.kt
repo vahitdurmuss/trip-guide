@@ -16,6 +16,8 @@ import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -39,7 +41,7 @@ import com.triona.triplab.data.TripStep
 fun TripStep(tripStep: TripStep, onClickTrip: (TripStep) -> Unit, modifier: Modifier = Modifier) {
     Column(modifier = modifier
         .clickable { onClickTrip(tripStep) }
-        .padding(4.dp)) {
+        .padding(8.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
                 text = tripStep.title,
@@ -47,14 +49,16 @@ fun TripStep(tripStep: TripStep, onClickTrip: (TripStep) -> Unit, modifier: Modi
                 textAlign = TextAlign.Start,
                 style = MaterialTheme.typography.titleMedium
             )
+
+            Icon(painter = painterResource(id = R.drawable.ic_time), contentDescription = "time")
+
             Text(
                 text = "${tripStep.startHour}-${tripStep.endHour}",
-                fontSize = 12.sp,
-                fontWeight = FontWeight.Light,
+                style = MaterialTheme.typography.labelMedium,
                 textAlign = TextAlign.End
             )
         }
-        Row {
+        Row(modifier=modifier.padding(top = 8.dp)) {
             Image(
                 painter = painterResource(id =tripStep.drawable),
                 contentDescription = "Item Photo",
