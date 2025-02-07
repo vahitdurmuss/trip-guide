@@ -5,6 +5,7 @@ import com.triona.triplab.R
 object MuglaDummyTrip {
     val muglaTripSteps = listOf(
         TripStep(
+            id = 0,
             title = "Ölüdeniz Plajı Ziyareti",
             quickDescription = "Muhteşem manzarasıyla ünlü Ölüdeniz Plajı'nı ziyaret edin.",
             detailedDescription = "Muğla'nın Fethiye ilçesinde bulunan Ölüdeniz Plajı'nın turkuaz rengi denizi ve beyaz kumuyla ünlüdür.",
@@ -16,6 +17,7 @@ object MuglaDummyTrip {
             drawable = R.mipmap.img_oludeniz
         ),
         TripStep(
+            id = 0,
             title = "Saklıkent Kanyonu Trekking",
             quickDescription = "Saklıkent Kanyonu'nda doğa yürüyüşü yapın.",
             detailedDescription = "Muğla'nın Fethiye ilçesinde bulunan Saklıkent Kanyonu, yüksek duvarları ve serin sularıyla ünlüdür.",
@@ -27,6 +29,7 @@ object MuglaDummyTrip {
             drawable = R.mipmap.img_saklikent_kanyon
         ),
         TripStep(
+            id = 0,
             title = "Dalyan Tekne Turu",
             quickDescription = "Dalyan'da Caretta Caretta kaplumbağalarını görebileceğiniz bir tekne turuna çıkın.",
             detailedDescription = "Muğla'nın Ortaca ilçesinde bulunan Dalyan, antik kalıntıları, kaplumbağa plajları ve termal sularıyla ünlüdür.",
@@ -38,6 +41,7 @@ object MuglaDummyTrip {
             drawable = R.mipmap.img_dalyan_tekneturu
         ),
         TripStep(
+            id = 0,
             title = "Bodrum'da Akşam Yemeği ve Gece Hayatı",
             quickDescription = "Bodrum'un eğlenceli gece hayatını keşfedin ve deniz ürünleriyle ünlü restoranlarda akşam yemeği yiyin.",
             detailedDescription = "Muğla'nın Bodrum ilçesi, yat limanları, antik kalıntıları ve gece kulüpleriyle ünlüdür.",
@@ -49,6 +53,7 @@ object MuglaDummyTrip {
             drawable = R.mipmap.img_bodrum_aksam_yemegi
         ),
         TripStep(
+            id = 0,
             title = "Konaklama",
             quickDescription = "Muğla'nın güzel bir otelinde konaklayın.",
             detailedDescription = "Muğla'nın çeşitli ilçelerinde birçok konaklama seçeneği bulunmaktadır.",
@@ -63,6 +68,7 @@ object MuglaDummyTrip {
 
     // Muğla için Trip nesnesini oluşturma
     val muglaTrip = Trip(
+        guiderId = 0,
         id = 1,
         drawable = R.mipmap.img_seruven_mugla,
         title = "Muğla Serüveni",

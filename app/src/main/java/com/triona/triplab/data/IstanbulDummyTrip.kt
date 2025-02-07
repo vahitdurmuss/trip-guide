@@ -3,6 +3,7 @@ package com.triona.triplab.data
 object IstanbulDummyTrip {
     val istanbulTripSteps = listOf(
         TripStep(
+            id = 0,
             title = "Arrival and Check-in",
             quickDescription = "Arrive in Istanbul and check-in at the hotel",
             detailedDescription = "Arrive at the hotel, check-in, and settle into your room.",
@@ -13,6 +14,7 @@ object IstanbulDummyTrip {
             photo = "istanbul_hotel.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Visit Hagia Sophia",
             quickDescription = "Explore the historic Hagia Sophia museum",
             detailedDescription = "Visit Hagia Sophia, a former Greek Orthodox Christian cathedral and Ottoman imperial mosque.",
@@ -23,6 +25,7 @@ object IstanbulDummyTrip {
             photo = "hagia_sophia.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Lunch at Sultanahmet",
             quickDescription = "Enjoy lunch in the Sultanahmet area",
             detailedDescription = "Dine at a local restaurant near Sultanahmet Square, surrounded by historic landmarks.",
@@ -33,6 +36,7 @@ object IstanbulDummyTrip {
             photo = "sultanahmet_lunch.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Explore Grand Bazaar",
             quickDescription = "Shop at the historic Grand Bazaar",
             detailedDescription = "Discover thousands of shops selling carpets, jewelry, ceramics, spices, and more.",
@@ -43,6 +47,7 @@ object IstanbulDummyTrip {
             photo = "grand_bazaar.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Bosphorus Cruise",
             quickDescription = "Take a scenic cruise along the Bosphorus",
             detailedDescription = "Enjoy breathtaking views of Istanbul from the water, passing by palaces, mosques, and bridges.",
@@ -53,6 +58,7 @@ object IstanbulDummyTrip {
             photo = "bosphorus_cruise.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Dinner at Maiden's Tower",
             quickDescription = "Dine at Maiden's Tower",
             detailedDescription = "Enjoy dinner at a restaurant located on Maiden's Tower, surrounded by the Bosphorus.",
@@ -63,6 +69,7 @@ object IstanbulDummyTrip {
             photo = "maidens_tower.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Return to Hotel",
             quickDescription = "Return to the hotel and relax",
             detailedDescription = "After a day of exploring Istanbul, return to the hotel and relax for the evening.",
@@ -75,6 +82,7 @@ object IstanbulDummyTrip {
     )
 
     val istanbulTrip = Trip(
+        guiderId = 0,
         id = 1,
         title = "İstanbul Keşfi",
         likeCount = 100,

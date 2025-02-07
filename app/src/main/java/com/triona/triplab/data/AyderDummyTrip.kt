@@ -4,6 +4,7 @@ object AyderDummyTrip {
 
     val ayderYaylasiDummySteps = listOf(
         TripStep(
+            id = 0,
             title = "Ayder Yaylası'na Varış",
             quickDescription = "Yaylaya ulaşıp manzaranın tadını çıkarma.",
             detailedDescription = "Rize'den araçla Ayder Yaylası'na varış. Yaylanın muhteşem manzarası ve temiz havasıyla tanışma.",
@@ -14,6 +15,7 @@ object AyderDummyTrip {
             photo = "https://example.com/photos/ayder_varis.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Ayder Yaylası Gezisi",
             quickDescription = "Yaylayı keşfetme ve yürüyüş.",
             detailedDescription = "Ayder Yaylası'nda yürüyüş yaparak çevreyi keşfetme. Doğa ile iç içe bir gün geçirme.",
@@ -24,6 +26,7 @@ object AyderDummyTrip {
             photo = "https://example.com/photos/ayder_gezi.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Ayder Kaplıcaları",
             quickDescription = "Kaplıca keyfi.",
             detailedDescription = "Ayder'in ünlü kaplıcalarında dinlenme ve rahatlama.",
@@ -34,6 +37,7 @@ object AyderDummyTrip {
             photo = "https://example.com/photos/ayder_kaplica.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Zilkale Ziyareti",
             quickDescription = "Tarihi kale ziyareti.",
             detailedDescription = "Yakınlardaki Zilkale'yi ziyaret ederek tarihi bir yapıyı keşfetme.",
@@ -44,6 +48,7 @@ object AyderDummyTrip {
             photo = "https://example.com/photos/zilkale.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Fırtına Deresi'nde Rafting",
             quickDescription = "Heyecan dolu rafting deneyimi.",
             detailedDescription = "Fırtına Deresi'nde profesyonel rehberler eşliğinde rafting yapma.",
@@ -54,6 +59,7 @@ object AyderDummyTrip {
             photo = "https://example.com/photos/firtina_raft.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Çamlıhemşin Gezisi",
             quickDescription = "Çamlıhemşin kasabasında gezi.",
             detailedDescription = "Ayder Yaylası'na yakın Çamlıhemşin kasabasını ziyaret etme ve yerel kültürü tanıma.",
@@ -64,6 +70,7 @@ object AyderDummyTrip {
             photo = "https://example.com/photos/camlihemsin.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Huser Yaylası",
             quickDescription = "Huser Yaylası'nda manzara izleme.",
             detailedDescription = "Huser Yaylası'na çıkarak bulutların üzerinde bir manzara izleme deneyimi.",
@@ -74,6 +81,7 @@ object AyderDummyTrip {
             photo = "https://example.com/photos/huser.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Pokut Yaylası",
             quickDescription = "Pokut Yaylası'nda kamp.",
             detailedDescription = "Pokut Yaylası'nda kamp yaparak doğayla iç içe bir gece geçirme.",
@@ -84,6 +92,7 @@ object AyderDummyTrip {
             photo = "https://example.com/photos/pokut.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Elevit Yaylası",
             quickDescription = "Elevit Yaylası'nda doğa yürüyüşü.",
             detailedDescription = "Elevit Yaylası'nda doğa yürüyüşü yaparak bölgenin flora ve faunasını keşfetme.",
@@ -94,6 +103,7 @@ object AyderDummyTrip {
             photo = "https://example.com/photos/elevit.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Ayder Yaylası'nda Akşam Yemeği",
             quickDescription = "Yerel yemeklerle akşam yemeği.",
             detailedDescription = "Ayder Yaylası'nda bir restoranda yerel Karadeniz mutfağının lezzetlerini tatma.",
@@ -107,6 +117,7 @@ object AyderDummyTrip {
 
 
     val ayderYaylasiTrip = Trip(
+        guiderId = 0,
         id = 3,
         likeCount = 0,
         title = "Ayder Yaylası Turu",

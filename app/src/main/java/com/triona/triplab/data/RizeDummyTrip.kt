@@ -3,6 +3,7 @@ package com.triona.triplab.data
 object RizeDummyTrip {
     val rizeTripSteps = listOf(
         TripStep(
+            id = 0,
             title = "Sabah Kahvaltısı",
             quickDescription = "Rize'nin lezzetli kahvaltılarından keyif alın.",
             detailedDescription = "Rize'de güzel bir kahvaltı yapın ve yöresel lezzetleri deneyin.",
@@ -13,6 +14,7 @@ object RizeDummyTrip {
             photo = "kahvalti.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Botanik Park Ziyareti",
             quickDescription = "Doğanın güzelliklerini keşfedin.",
             detailedDescription = "Rize Botanik Parkı'nda yürüyüş yapın ve çeşitli bitki türlerini keşfedin.",
@@ -23,6 +25,7 @@ object RizeDummyTrip {
             photo = "botanik_park.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Çay Fabrikası Turu",
             quickDescription = "Rize'nin çay üretim sürecini öğrenin.",
             detailedDescription = "Rize çay fabrikasını ziyaret edin ve çayın üretim aşamalarını görün.",
@@ -33,6 +36,7 @@ object RizeDummyTrip {
             photo = "cay_fabrikasi.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Öğle Yemeği",
             quickDescription = "Yöresel bir restoranda öğle yemeği.",
             detailedDescription = "Rize'nin meşhur lezzetlerini tadabileceğiniz bir restoranda öğle yemeği.",
@@ -43,6 +47,7 @@ object RizeDummyTrip {
             photo = "ogle_yemegi.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Şelale Ziyareti",
             quickDescription = "Doğanın içinde serinleyin.",
             detailedDescription = "Rize'nin doğal güzelliklerinden biri olan şelaleyi ziyaret edin ve serinleyin.",
@@ -53,6 +58,7 @@ object RizeDummyTrip {
             photo = "selale.jpg"
         ),
         TripStep(
+            id = 0,
             title = "El Sanatları Atölyesi Ziyareti",
             quickDescription = "Yöresel el sanatlarına tanıklık edin.",
             detailedDescription = "Rize'de bir el sanatları atölyesini ziyaret edin ve geleneksel el işçiliği hakkında bilgi edinin.",
@@ -63,6 +69,7 @@ object RizeDummyTrip {
             photo = "el_sanatlari.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Akşam Çay Keyfi",
             quickDescription = "Rize çayının tadını çıkarın.",
             detailedDescription = "Akşam üzeri bir çay bahçesinde Rize'nin meşhur çayını içerek keyif yapın.",
@@ -73,6 +80,7 @@ object RizeDummyTrip {
             photo = "aksam_cay.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Akşam Yemeği",
             quickDescription = "Akşam yemeği için yerel bir restorana gidin.",
             detailedDescription = "Rize'nin lezzetli yemeklerinden oluşan bir akşam yemeği için yerel bir restorana gidin.",
@@ -83,6 +91,7 @@ object RizeDummyTrip {
             photo = "aksam_yemegi.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Sahil Gezisi",
             quickDescription = "Rize'nin sahilini keşfedin.",
             detailedDescription = "Güneşin batışını izlemek için Rize'nin sahilini gezin ve manzaraya hayran kalın.",
@@ -93,6 +102,7 @@ object RizeDummyTrip {
             photo = "sahil_gezisi.jpg"
         ),
         TripStep(
+            id = 0,
             title = "Dönüş ve Konaklama",
             quickDescription = "Otele dönüş ve geceyi dinlenerek geçirin.",
             detailedDescription = "Günün sonunda otele dönün ve dinlenmek için zaman ayırın.",
@@ -107,6 +117,7 @@ object RizeDummyTrip {
 
     // Rize için Trip nesnesini oluşturma
     val rizeTrip = Trip(
+        guiderId = 0,
         id = 1,
         title = "Rize Keşfi",
         likeCount = 300,
