@@ -84,15 +84,12 @@ fun GuiderDetail(guider: Guider, modifier: Modifier = Modifier) {
             )
 
 
-//            TripsInLazyRow(trips =List(10){IstanbulDummyTrip.istanbulTrip}, onClickTrip ={})
-
-
+            TripsInGrid(
+                title = "En Beğenilen Seyahatlerim",
+                trips = List(10) { IstanbulDummyTrip.istanbulTrip },
+                onClickTrip = {})
         }
-
-
     }
-
-
 }
 
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO or Configuration.UI_MODE_TYPE_NORMAL)

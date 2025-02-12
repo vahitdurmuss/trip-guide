@@ -10,6 +10,6 @@ data class Trip(
     val title: String,
     val description: String,
     val location: String,
-    @DrawableRes val drawable: Int = R.mipmap.ic_mugla_seruven,
+    @DrawableRes val drawable: Int = R.mipmap.img_saklikent_kanyon,
     val steps: List<TripStep>
 )
