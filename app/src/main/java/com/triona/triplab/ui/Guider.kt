@@ -5,7 +5,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
@@ -24,7 +23,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -69,12 +67,25 @@ fun GuiderItem(fullName: String, onClick: () -> Unit, modifier: Modifier = Modif
 }
 
 @Composable
-fun Guiders(title:String,guiders: List<Guider>,onClickGuider: (Guider) -> Unit, modifier: Modifier = Modifier) {
+fun Guiders(
+    title: String,
+    guiders: List<Guider>,
+    onClickGuider: (Guider) -> Unit,
+    modifier: Modifier = Modifier
+) {
 
     Column {
-        Text(text = title,modifier=modifier.padding(8.dp), style = MaterialTheme.typography.titleMedium)
-        LazyRow( horizontalArrangement = Arrangement.spacedBy(8.dp), contentPadding = PaddingValues(8.dp), modifier = modifier) {
-            items(guiders){ guider->
+        Text(
+            text = title,
+            modifier = modifier.padding(8.dp),
+            style = MaterialTheme.typography.titleMedium
+        )
+        LazyRow(
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            contentPadding = PaddingValues(8.dp),
+            modifier = modifier
+        ) {
+            items(guiders) { guider ->
                 Surface(shadowElevation = 2.dp, shape = MaterialTheme.shapes.small) {
                     GuiderItem(
                         fullName = "${guider.name} ${guider.surname}",
@@ -87,15 +98,14 @@ fun Guiders(title:String,guiders: List<Guider>,onClickGuider: (Guider) -> Unit, 
     }
 }
 
-
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO or Configuration.UI_MODE_TYPE_NORMAL)
 @Composable
 fun PreviewGuider() {
-    GuiderItem(fullName = "Vahit Durmuş",onClick = { /*TODO*/ },Modifier)
+    GuiderItem(fullName = "Vahit Durmuş", onClick = { /*TODO*/ }, Modifier)
 }
 
 @Preview
 @Composable
 fun PreviewGuiders(modifier: Modifier = Modifier) {
-    Guiders("Guiders",guiders= listGuiders,onClickGuider=onClickGuider,modifier=Modifier)
+    Guiders("Guiders", guiders = listGuiders, onClickGuider = onClickGuider, modifier = Modifier)
 }

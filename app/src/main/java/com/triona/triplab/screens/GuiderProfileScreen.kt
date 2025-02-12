@@ -1,4 +1,4 @@
-package com.triona.triplab.ui.screens
+package com.triona.triplab.screens
 
 /**
  * his profile
