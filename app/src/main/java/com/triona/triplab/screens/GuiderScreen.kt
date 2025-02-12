@@ -35,7 +35,12 @@ import com.triona.triplab.ui.TripsInLazyRow
  */
 
 @Composable
-fun GuiderDetail(guider: Guider, modifier: Modifier = Modifier) {
+fun GuiderScreen(guider: Guider,modifier: Modifier = Modifier) {
+    GuiderDetail(guider = guider)
+}
+
+@Composable
+private fun GuiderDetail(guider: Guider, modifier: Modifier = Modifier) {
 
     Column(Modifier.fillMaxWidth()) {
 
