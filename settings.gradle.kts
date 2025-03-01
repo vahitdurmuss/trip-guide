@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "TripLab"
 include(":app")
-include(":app:data")
