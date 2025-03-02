@@ -19,9 +19,11 @@ import com.triona.triplab.data.room.step.Step
 import com.triona.triplab.data.room.step.StepDao
 import com.triona.triplab.data.room.trip.TripDao
 import com.triona.triplab.data.room.tripStep.TripStepDao
+import com.triona.triplab.data.room.user.User
 
 @Database(
     entities = [
+        User::class,
         Category::class,
         City::class,
         Guider::class,
@@ -32,7 +34,7 @@ import com.triona.triplab.data.room.tripStep.TripStepDao
         TripStep::class
     ],
     version = 1,
-    exportSchema = false
+    exportSchema = true
 )
 
 @TypeConverters(Converters::class)
